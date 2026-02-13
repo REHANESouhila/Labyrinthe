@@ -1,0 +1,25 @@
+#bellaghma imene
+#Rehane souhila
+
+# pour compiler_________________
+
+make    # Compile labyrinthe
+
+./labyrinthe
+
+
+#creation dun bib .so___________
+
+gcc -Wall -fPIC -shared -o liblabyrinthe.so labyrinthe.c
+gcc -Wall -o labyrinthe main.c -L. -llabyrinthe -pthread
+
+# pour exucuter ____________________
+
+export LD_LIBRARY_PATH=.    //va chercher les .so dans le dossier courant
+./labyrinthe
+
+##############################################
+make        # Compile labyrinthe
+./labyrinthe  # Exécute le prgrm
+make clean  # Supp  les .o et l'exécutable
+make rebuild  # Recompile depuis 0
